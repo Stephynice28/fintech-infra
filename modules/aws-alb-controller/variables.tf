@@ -20,11 +20,11 @@ variable "vpc_id" {
 variable "oidc_provider_arn" {
   description = "OIDC provider ARN for IRSA"
   type        = string
- }
+}
 
- variable "account_id" {
+variable "account_id" {
   description = "aws account"
-  type = string
-  default = "812490741290"
-   
- }
+  type        = string
+  default     = "812490741290"
+
+}
