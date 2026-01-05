@@ -122,6 +122,8 @@ module "iam" {
   source      = "./../modules/iam"
   environment = var.env_name
   tags        = local.common_tags
+  cluster_name = module.eks.cluster_name
+  eks_oidc_provider = module.eks.oidc_provider
 }
 
 
