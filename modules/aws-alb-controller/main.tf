@@ -129,7 +129,7 @@ resource "helm_release" "lb" {
     },
     {
       name  = "serviceAccount.name"
-      value = kubernetes_service_account_v1.service_account
+      value = kubernetes_service_account_v1.service_account.metadata[0].name
     },
     {
       name  = "clusterName"
@@ -137,3 +137,4 @@ resource "helm_release" "lb" {
     }
   ]
 }
+
