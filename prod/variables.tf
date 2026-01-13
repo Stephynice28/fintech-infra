@@ -85,19 +85,19 @@ variable "key_name" {
 variable "domain_name" {
   description = "Primary domain name for certificate issuance"
   type        = string
-  default     = "*.fusisoft.com"
+  default     = "*.beautanica.com"
 }
 
 variable "san_domains" {
   description = "SANs (Subject Alternative Names) for SSL certificate"
   type        = list(string)
-  default     = ["*.fusisoft.com"]
+  default     = ["*.beautanica.com"]
 }
 
 variable "route53_zone_id" {
   description = "Route 53 hosted zone ID for domain validation"
   type        = string
-  default     = "ZC7WDABJDII2"
+  default     = "Z04679862B9I1N3EFO8UX"
 }
 
 ################################################################################
