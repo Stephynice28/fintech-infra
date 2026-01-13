@@ -6,7 +6,8 @@
 *.tfstate.*
 *.tfplan
 *.workspace
-*.key.pem
+*.key.pem.*
+ariel-fintech-key.pem
 
 
 
