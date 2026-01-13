@@ -80,7 +80,7 @@ module "eks" {
   # Managed Node Groups - Best Practice
   ##############################################
   eks_managed_node_group_defaults = {
-    ami_type       = "AL2023_x86_64_STANDARD"
+    ami_type       =  "AL2_x86_64"
     instance_types = ["t3.medium"]
 
     min_size     = 3
@@ -179,7 +179,7 @@ resource "kubernetes_cluster_role_binding_v1" "eks_admins_binding" {
 # Kubernetes Namespaces with depends_on
 ##############################################
 
-resource "kubernetes_namespace" "fintech" {
+resource "kubernetes_namespace_v1" "fintech" {
   metadata {
     name = "fintech"
     annotations = {
@@ -193,7 +193,7 @@ resource "kubernetes_namespace" "fintech" {
   depends_on = [module.eks]
 }
 
-resource "kubernetes_namespace" "monitoring" {
+resource "kubernetes_namespace_v1" "monitoring" {
   metadata {
     name = "monitoring"
     annotations = {
@@ -207,7 +207,7 @@ resource "kubernetes_namespace" "monitoring" {
   depends_on = [module.eks]
 }
 
-resource "kubernetes_namespace" "fintech_dev" {
+resource "kubernetes_namespace_v1" "fintech_dev" {
   metadata {
     name = "fintech-dev"
     annotations = {
